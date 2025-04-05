@@ -1,24 +1,19 @@
 {
-  "products": [
-    {
-      "id": "001",
-      "name": "Sony",
-      "price": 150000
+  "products": {
+   "001": {
+    
+      "name": "Hisense",
+      "price": 50000
     },
-    {
-      "id": "002",
+    "002": {
+   
       "name": "Sony SoundBar",
       "price": 150000
     },
-    {
+    "003":{
       "name": "Apple AirPods v6 (теперь с прошивкой)",
-      "price": 40000,
-      "id": "003"
-    },
-    {
-      "name": "Новый пылесос",
-      "price": 4690,
-      "id": "sNAYlbJ"
+      "price": 40000
+     
     }
-  ]
+  }
 }

@@ -14,7 +14,7 @@ export const Firebase = () => {
     setRefreshProductsFlag(!refreshProductsFlag);
   };
 
-  const { isLoading, products } = useGetProducts(refreshProductsFlag);
+  const { isLoading, products } = useGetProducts();
 
   const { requestAddVacuumCleaner, isCreating } =
     useAddVacuumCleaner(refreshProducts);
@@ -30,7 +30,7 @@ export const Firebase = () => {
         <div className={s.loader}></div>
       ) : (
         <div>
-          {products.map(({ id, name, price }) => (
+          {Object.entries(products).map(([id, { name, price }]) => (
             <div key={id}>
               {name} - {price} rub
             </div>
