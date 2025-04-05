@@ -1,0 +1,16 @@
+[
+  {
+    "id": "001",
+   "name": "Телевизор",
+    "price": 57990
+  },
+  {"id": "002",
+    "name": "PlayStation 5",
+   "price": 50990
+  },
+  {
+    "id": "003",
+    "name": "DualSense",
+   "price": 7990
+  }
+]
