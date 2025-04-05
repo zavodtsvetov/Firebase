@@ -1,21 +1,18 @@
 import { useState } from "react";
-export const useRequestUpdateAirpods = (refreshProducts) => {
+import { db } from "../firebase";
+import { ref, set } from "firebase/database"; // либо update, обновляет часть данных
+export const useRequestUpdateAirpods = () => {
   const [isUpdating, setIsUpdating] = useState(false);
 
   const requestUpdateAirPods = () => {
     setIsUpdating(true);
-    fetch("http://localhost:3005/products/003", {
-      method: "PUT",
-      headers: { "Content-Type": "application/json; charset=utf-8" },
-      body: JSON.stringify({
-        name: "Apple AirPods v6 (теперь с прошивкой)",
-        price: 40000,
-      }),
+    const airpodsDBRef = ref(db, "products/003");
+    set(airpodsDBRef, {
+      name: "Apple AirPods v6 ПРОШИВКА",
+      price: 40000,
     })
-      .then((rawResponseFridge) => rawResponseFridge.json())
       .then((resp) => {
         console.log("Наушники обновлены ", resp);
-        refreshProducts();
       })
       .finally(() => setIsUpdating(false));
   };

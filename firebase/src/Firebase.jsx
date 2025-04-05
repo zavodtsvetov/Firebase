@@ -16,13 +16,11 @@ export const Firebase = () => {
 
   const { isLoading, products } = useGetProducts();
 
-  const { requestAddVacuumCleaner, isCreating } =
-    useAddVacuumCleaner(refreshProducts);
+  const { requestAddVacuumCleaner, isCreating } = useAddVacuumCleaner();
 
-  const { requestUpdateAirPods, isUpdating } =
-    useRequestUpdateAirpods(refreshProducts);
+  const { requestUpdateAirPods, isUpdating } = useRequestUpdateAirpods();
 
-  const { deleteSamsungTV, isDeleting } = useDeleteTV(refreshProducts);
+  const { deleteSamsungTV, isDeleting } = useDeleteTV();
   return (
     <>
       <h1> FIREBASE </h1>
@@ -41,7 +39,7 @@ export const Firebase = () => {
             disabled={isCreating}
             onClick={requestAddVacuumCleaner}
           >
-            Добавить пылесос
+            Добавить увлажнитель
           </button>
 
           <div>
